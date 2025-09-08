@@ -1,5 +1,5 @@
 {% set name = "duf" %}
-{% set version = "0.8.1" %}
+{% set version = "0.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/muesli/duf/archive/v{{ version }}.tar.gz
-  sha256: ebc3880540b25186ace220c09af859f867251f4ecaef435525a141d98d71a27a
+  sha256: a81883475ab5591840882892a85185b7cda153e87f4d3978b45dec215761585c
 
 build:
   number: 0
