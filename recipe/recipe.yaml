@@ -1,34 +1,36 @@
-{% set name = "duf" %}
-{% set version = "0.9.1" %}
+schema_version: 1
+
+context:
+  version: 0.9.1
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: duf
+  version: ${{ version }}
 
 source:
-  url: https://github.com/muesli/duf/archive/v{{ version }}.tar.gz
+  url: https://github.com/muesli/duf/archive/v${{ version }}.tar.gz
   sha256: 1334d8c1a7957d0aceebe651e3af9e1c1e0c6f298f1feb39643dd0bd8ad1e955
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
-    - {{ compiler('go-nocgo') }}
+    - ${{ compiler('go-nocgo') }}
     - go-licenses
 
-test:
-  commands:
-    - duf --help
+tests:
+  - script:
+      - duf --help
 
 about:
-  home: https://github.com/muesli/duf
   license: MIT
   license_file:
     - LICENSE
     - license-files/
   summary: Disk Usage/Free Utility - a better 'df' alternative
-  dev_url: https://github.com/muesli/duf
+  homepage: https://github.com/muesli/duf
+  repository: https://github.com/muesli/duf
 
 extra:
   recipe-maintainers:
